@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     {{-- <link rel="stylesheet" href="../resources/css/app.css"> --}}
-    <link href="{{URL::asset('css/app.css')}}" rel="stylesheet" >
+    <link href="{{URL::asset('/css/app.css')}}" rel="stylesheet" >
 </head>
-<body>
-    <h1 class="bg-white">Welkom on massage lake</h1>
+<body class="bg-gray-500">
+    <h1 class="font-100">Welkom on massage lake</h1>
     <p>
         Titel: {{ $post->title }}<br>
         Content: {{ $post->content }}<br>
