@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\Request;
 use DB;
 
 class PostsController extends Controller
@@ -19,6 +19,16 @@ class PostsController extends Controller
         return view('post', array('post' => $post));
     }
     public function makepost(){
-        echo"Hier kan je een post maken";
+        return view('makepost');
+    }
+    
+    public function handle(Request $request){
+        
+        $data = $request->validate(
+            [
+                'title' => 'required|min:4'
+            ]
+            );
+            echo $request->title;
     }
 }

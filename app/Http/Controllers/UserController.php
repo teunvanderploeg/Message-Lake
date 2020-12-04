@@ -9,9 +9,6 @@ class UserController extends Controller
     public function overmij($persone){
         return view('overmij', ['name' => $persone]);
     }
-    public function me(){
-        return "Dit ben ik";
-    } 
     public function users(){
         echo"Lijst met Useres";
     }

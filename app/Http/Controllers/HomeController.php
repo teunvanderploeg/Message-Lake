@@ -3,11 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     //
     public function home(){
-        echo "hallo weet je nog wie wij zijn";
+
+        $post = DB::table('posts')->get();
+
+        if(!$post){
+            abort(404);
+        }
+
+        return view('home', ['post' => $post]);
+
     } 
 }

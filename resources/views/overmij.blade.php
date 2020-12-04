@@ -1,4 +1,4 @@
-@extends("layout")
+@extends('layouts/main')
 
 @section('page_title')
     Over Mij
