@@ -26,9 +26,11 @@ class PostsController extends Controller
         
         $data = $request->validate(
             [
-                'title' => 'required|min:4'
+                'title' => 'required|min:4|max:50',
+                'content' => 'required|min:4|max:500',
             ]
             );
-            echo $request->title;
+
+            dd($data);
     }
 }

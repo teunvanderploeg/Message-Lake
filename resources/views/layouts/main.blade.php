@@ -18,19 +18,17 @@
                     <a href="{{route('home.home')}}" class="hover:text-gray-300">Home</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="#" class="hover:text-gray-300">Me</a>
+                    <a href="{{route('posts.makepost')}}" class="hover:text-gray-300">Make post</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="#" class="hover:text-gray-300">Friends</a>
+                    <a href="{{route('registreren.show')}}" class="hover:text-gray-300">Registreren</a>
+                </li>
+                <li class="md:ml-6 mt-3 md:mt-0">
+                    <a href="{{route('login.loginpage')}}" class="hover:text-gray-300">Login</a>
                 </li>
             </ul>
             <div class="flex flex-col md:flex-row items-center">
-                <div class="relative mt-3 md:mt-0">
-                    <input type="text" class="bg-gray-800 rounded-full text-sm w-64 px-4 pl-8 py-1 focus:outline-none focus:shadow-outline" placeholder="Search">
-                    <div class="absolute top-0">
-                        <i class="fas fa-search fill-current w-4 text-gray-500 mt-2 ml-2"></i>
-                    </div>
-                </div>
+                
                 <div class="md:ml-4 mt-3 md:mt-0"><a href="#"><i class="far fa-user-circle rounded-full text-3xl"></i></a></div>
             </div>
         </div>

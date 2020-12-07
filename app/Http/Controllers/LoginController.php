@@ -8,6 +8,15 @@ class LoginController extends Controller
 {
     //loginpage
     public function loginpage(){
-        echo"Lijst met Useres";
+        return view('login');
+    }
+
+    public function login(Request $request){
+        $data = $request->validate(
+            [
+                'email' => 'required|min:4|max:50',
+                'password' => 'required|min:4|max:50',
+            ]
+            );
     }
 }

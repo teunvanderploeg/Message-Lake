@@ -7,11 +7,18 @@ use Illuminate\Http\Request;
 class RegistrerenController extends Controller
 {
     public function show(){
-        echo"Registreren Pagina";
+        return view('registreren');
     }
 
-    public function update($info){
+    public function registreren(Request $request){
         echo"registreren";
-        echo $info;
+
+        $data = $request->validate(
+            [
+                'email' => 'required|min:4|max:50',
+                'username' => 'required|min:4|max:50',
+                'password' => 'required|min:4|max:50',
+            ]
+            );
     }
 }
