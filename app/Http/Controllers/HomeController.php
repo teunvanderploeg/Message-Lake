@@ -8,15 +8,10 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     //
-    public function home(){
+    public function home()
+    {
 
-        $post = DB::table('posts')->get();
-
-        if(!$post){
-            abort(404);
-        }
-
+        $post = DB::table('mijn_posts')->get()->take(10);
         return view('home', ['post' => $post]);
-
-    } 
+    }
 }
