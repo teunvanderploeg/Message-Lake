@@ -12,8 +12,8 @@ class PostsController extends Controller
     public function show($postID)
     {
 
-        $post = DB::table('mijn_posts')->where('id', $postID)->first();
-
+        $post = MijnPost::find($postID);
+        // DB::table('mijn_posts')->where('id', $postID)->first();
         if (!$post) {
             abort(404);
         }

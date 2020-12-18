@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\MijnPost;
 
 class HomeController extends Controller
 {
@@ -11,7 +12,9 @@ class HomeController extends Controller
     public function home()
     {
 
-        $post = DB::table('mijn_posts')->get()->take(10);
-        return view('home', ['post' => $post]);
+        // $post = DB::table('mijn_posts')->get()->paginate(3);
+        $post = MijnPost::paginate(4);
+
+        return view('home', ['posts' => $post]);
     }
 }
