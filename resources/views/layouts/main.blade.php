@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@section('page_title')MassageLake @endsection @yield('page_title')</title>
+    <title>@section('page_title')MessageLake @endsection @yield('page_title')</title>
     <link href="{{URL::asset('/css/app.css')}}" rel="stylesheet" >
 </head>
 <body class="font-sans bg-gray-900 text-white">
@@ -28,7 +28,7 @@
                 </li>
             </ul>
             <div class="flex flex-col md:flex-row items-center">
-                
+
                 <div class="md:ml-4 mt-3 md:mt-0"><a href="#"><i class="far fa-user-circle rounded-full text-3xl"></i></a></div>
             </div>
         </div>

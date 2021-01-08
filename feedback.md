@@ -14,7 +14,7 @@ Tops die ik heb gekregen:
 - Het posten van artikelen gaat goed
 
 Stappenplan komende weken (wat ga ik met de feedback doen?)
-…
+Ik ga werken aan me authentication systeem, en de carts en de img's op de juiste hoogtes komen te staan  
 
 
 Kamil Agdere
