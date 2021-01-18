@@ -13,7 +13,7 @@ class HomeController extends Controller
     {
 
         // $post = DB::table('mijn_posts')->get()->paginate(3);
-        $post = MijnPost::paginate(4);
+        $post = MijnPost::paginate(20);
 
         return view('home', ['posts' => $post]);
     }
