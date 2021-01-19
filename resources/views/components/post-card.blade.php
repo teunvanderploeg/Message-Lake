@@ -1,5 +1,6 @@
 <div class="m-auto px-4 py-8 max-w-xl">
     <div class="bg-gray-700 shadow shadow-2xl hover:shadow-md hover:bg-white cursor-pointer transition" >
+        <a href="posts/{{$post->id}}">
         <div>
             @if ($post->img)
             <img src="{{ asset('storage/' . $post->img) }}">
@@ -12,5 +13,6 @@
                 <a class="text-white-200 text-xs px-3 ">{{ $post->updated_at }}</a>
             </div>
         </div>
+    </a>
     </div>
 </div>

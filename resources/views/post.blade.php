@@ -1,20 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MessageLake</title>
-    {{-- <link rel="stylesheet" href="../resources/css/app.css"> --}}
-    <link href="{{URL::asset('/css/app.css')}}" rel="stylesheet" >
-</head>
-<body class="bg-gray-500">
-    <h1 class="font-100">Welkom on massage lake</h1>
-    <p>
-        Titel: {{ $post->title }}<br>
-        Content: {{ $post->content }}<br>
-        User: {{ $post->user }}<br>
-        Time: {{ $post->time }}<br>
-    </p>
-</body>
-</html>
+
+
+@extends('layouts/main')
+
+@section('page_title')
+    Posts
+@endsection
+
+@section('content')
+
+<div class="movie-info boder-b border-gray-800">
+    <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
+        <img src="{{ asset('storage/' . $post->img) }}">
+        <div class="ml-2 md:ml-24">
+        <h2 class="text-4xl font-semibold">{{ $post->title }}</h2>
+            <div class="flex flex-wrap items-center text-gray-400 text-sm mt-3">
+                @if ($post->created_at == $post->updated_at)
+                    <span class="ml-1">{{ $post->created_at}}</span>
+                @else
+                    <span class="ml-1">{{ $post->created_at}}</span>
+                    <span class="mx-2"> | </span>
+                    <span class="ml-1">{{ $post->updated_at}}</span>
+                @endif
+            </div>
+        <p class="text-gray-300 mt-8 ">{{ $post->content }}</p>
+        </div>
+    </div>
+</div>
+@endsection
