@@ -10,7 +10,7 @@
 
 <div class="movie-info boder-b border-gray-800">
     <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
-        <img src="{{ asset('storage/' . $post->img) }}">
+        <img src="{{ asset('storage/' . $post->img) }}" class="max-w-4xl">
         <div class="ml-2 md:ml-24">
         <h2 class="text-4xl font-semibold">{{ $post->title }}</h2>
             <div class="flex flex-wrap items-center text-gray-400 text-sm mt-3">

@@ -16,11 +16,15 @@ class PostTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
+
+        $dateTime = now();
         foreach (range(1, 30) as $index) {
             DB::table('mijn_posts')->insert([
                 'title' => $faker->sentence(3),
                 'content' => $faker->paragraph(4),
                 'img' => $faker->imageUrl($width = 640, $height = 480),
+                'created_at' => $dateTime,
+                'updated_at' => $dateTime,
             ]);
         }
     }

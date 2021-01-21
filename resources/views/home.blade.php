@@ -12,7 +12,7 @@
         @endforeach
 
     </div>
-    <div class="flex w-auto">
+    <div class="flex text-center w-auto m-5 mx-10 grid justify-items-stretch">
     {{ $posts->links('pagination::tailwind') }}
-</div>
+    </div>
 @endsection
