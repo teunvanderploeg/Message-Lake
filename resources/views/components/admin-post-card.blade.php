@@ -10,7 +10,8 @@
                 <p class="text-xs text-white">{{ $post->content }}</p>
         </div>
         <div class="flex mr-5 ml-auto my-auto text-right">
-            <a href="admin/delete/{{ $post->id }}" class="text-red-700 hover:text-red-800">Delete</a>
+            <a href="admin/delete/{{ $post->id }}" class="text-red-700 hover:text-red-800 m-2">Delete</a>
+            <a href="edit/{{$post->id }}" class="text-green-700 hover:text-green-800  m-2">Edit</a>
         </div>
 
 

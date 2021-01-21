@@ -40,4 +40,43 @@ class PostsController extends Controller
         MijnPost::create($data);
         return view('makepost');
     }
+
+    public function edit($postID)
+    {
+        $post = MijnPost::find($postID);
+        // DB::table('mijn_posts')->where('id', $postID)->first();
+        if (!$post) {
+            abort(404);
+        }
+
+        return view('edit', array('post' => $post));
+    }
+
+    public function editPost(Request $request)
+    {
+
+        // DB::table('mijn_posts')->where('id', $postID)->first();
+        $data = $request->validate(
+            [
+                'title' => 'required|min:4|max:50',
+                'content' => 'required|min:4|max:500',
+                'id' => 'required',
+            ]
+        );
+
+
+        $title = $data['title'];
+        $content = $data['content'];
+        $id = $data['id'];
+        MijnPost::where('id', $id)->update(['title' => $title, 'content' => $content]);
+
+        $post = MijnPost::find($data['id']);
+
+
+        if (!$post) {
+            abort(404);
+        }
+
+        return view('edit', array('post' => $post));
+    }
 }

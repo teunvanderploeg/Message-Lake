@@ -18,7 +18,7 @@
       @enderror
     <div class="mb-4">
       <label class="block text-white text-sm font-semibold mb-2" for="content">Content</label>
-      <textarea class="bg-gray-100 p-1 appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="content" type="text" name="content" value=""/></textarea>
+      <textarea class="bg-gray-100 p-1 appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-60" id="content" type="text" name="content" value=""/></textarea>
       @error('content')
           <p>{{ $message }}</p><br>
       @enderror
@@ -28,7 +28,7 @@
           <p>{{ $message }}</p><br>
       @enderror
       <div class="flex items-center justify-between">
-        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">Cancel</a>
+        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="{{route('home.home')}}">Cancel</a>
         <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Create post">
     </div>
   </form>
