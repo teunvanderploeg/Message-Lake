@@ -8,6 +8,13 @@
     <link href="{{URL::asset('/css/app.css')}}" rel="stylesheet" >
 </head>
 <body class="font-sans bg-gray-900 text-white">
+    <!--                                                      .__          __
+  _____   ____   ______ ___________     ____   ____   |  | _____  |  | __ ____
+ /     \_/ __ \ /  ___//  ___/\__  \   / ___\_/ __ \  |  | \__  \ |  |/ // __ \
+|  Y Y  \  ___/ \___ \ \___ \  / __ \_/ /_/  >  ___/  |  |__/ __ \|    <\  ___/
+|__|_|  /\___  >____  >____  >(____  /\___  / \___  > |____(____  /__|_ \\___  >
+      \/     \/     \/     \/      \//_____/      \/            \/     \/    \/
+    -->
     <nav class="border-b border-gray-800">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-6">
             <ul class="flex flex-col md:flex-row items-center">
