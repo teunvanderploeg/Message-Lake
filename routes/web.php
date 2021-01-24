@@ -29,6 +29,7 @@ Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name(
 
 
 Route::get('/user/{persoon}', 'App\Http\Controllers\UserController@overmij')->name('user.overmij');
+
 Route::get('/posts/{post}', 'App\Http\Controllers\PostsController@show')->name('posts.show');
 
 Auth::routes();

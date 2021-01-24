@@ -17,22 +17,35 @@
                 <li class="md:ml-16 mt-3 md:mt-0">
                     <a href="{{route('home.home')}}" class="hover:text-gray-300">Home</a>
                 </li>
-                <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="{{route('posts.makepost')}}" class="hover:text-gray-300">Make post</a>
-                </li>
+                @if (!Auth::check())
                 <li class="md:ml-6 mt-3 md:mt-0">
                     <a href="{{route('register')}}" class="hover:text-gray-300">Registreren</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
                     <a href="{{route('login')}}" class="hover:text-gray-300">Login</a>
                 </li>
+                @else
+                <li class="md:ml-6 mt-3 md:mt-0">
+                    <a href="{{route('posts.makepost')}}" class="hover:text-gray-300">Make post</a>
+                </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
                     <a href="{{route('logout')}}" class="hover:text-gray-300">Logout</a>
                 </li>
+                @if(Auth::user()->name == "Admin" || Auth::user()->name == "admin")
+                <li class="md:ml-6 mt-3 md:mt-0">
+                    <a href="{{route('admin.admin')}}" class="hover:text-gray-300">Admin</a>
+                </li>
+                @endif
+                @endif
+
+
             </ul>
             <div class="flex flex-col md:flex-row items-center">
-
+                @if (!Auth::check())
                 <div class="md:ml-4 mt-3 md:mt-0"><a href="#"><i class="far fa-user-circle rounded-full text-3xl"></i></a></div>
+                @else
+                <div class="md:ml-4 mt-3 md:mt-0"><a href="#">{{ Auth::user()->name }}</a></div>
+                @endif
             </div>
         </div>
     </nav>

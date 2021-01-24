@@ -1,7 +1,11 @@
-## Massage Lake
+# Message Lake
 
-### About Laravel
+## Info
+Je moet eerst inlogen om bij de upload te kunnen komen.
+En de admin page kom je op door /admin achter de url te zetten. (Moet je ook voor ingelogd zijn)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Extra info
+De plaatjes van de posts worden niet ingeladen door dat de seeder url geeft. Maar als je zelf iets upload dan krijg je er wel een plaatje er bij.
+
 
 
