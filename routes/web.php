@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['middleware' => 'isAdmin'], function () {
         Route::get('/admin', [AdminController::class, 'admin'])->name('admin.admin');
-        Route::get('/admin/delete/{post}', [AdminController::class, 'deleteAdminn'])->name('admin.delete');
+        Route::get('/admin/delete/{post}', [AdminController::class, 'deleteAdmin'])->name('admin.delete');
     });
 });
 
