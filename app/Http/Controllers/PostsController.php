@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MijnPost;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 
 {
-    public function show(MijnPost $post)
+    public function show(Post $post)
     {
         return view('post', array('post' => $post));
     }
@@ -29,10 +29,10 @@ class PostsController extends Controller
         );
 
         $data['img'] = $data['img']->store('upload_img', 'public');
-        return redirect()->route('posts.show', MijnPost::create($data));
+        return redirect()->route('posts.show', Post::create($data));
     }
 
-    public function edit(MijnPost $post)
+    public function edit(Post $post)
     {
         return view('edit', array('post' => $post));
     }
@@ -47,7 +47,7 @@ class PostsController extends Controller
             ]
         );
 
-        MijnPost::where('id', $data['id'])->update(['title' => $data['title'], 'content' => $data['content']]);
+        Post::where('id', $data['id'])->update(['title' => $data['title'], 'content' => $data['content']]);
 
         return redirect('/admin');
     }
