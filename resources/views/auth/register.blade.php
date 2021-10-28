@@ -7,14 +7,14 @@
             <div class="">
                 <div class="text-center text-white mb-6 text-2xl">{{ __('Register') }}</div>
 
-                <div class="">
+                <div class="w-full">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="">
                             <label for="name" class="">{{ __('Name') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="">
                                 <input id="name" type="text" class="bg-white mb-3 text-black rounded" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
@@ -25,10 +25,11 @@
                             </div>
                         </div>
 
+
                         <div class="">
                             <label for="email" class="">{{ __('E-Mail Address') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="">
                                 <input id="email" type="email" class="bg-white mb-3 text-black rounded" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
@@ -39,10 +40,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="">
                             <label for="password" class="">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="">
                                 <input id="password" type="password" class="bg-white mb-3 text-black rounded" name="password" required autocomplete="new-password">
 
                                 @error('password')
@@ -56,7 +57,7 @@
                         <div class="">
                             <label for="password-confirm" class="">{{ __('Confirm Password') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="">
                                 <input id="password-confirm" type="password" class="bg-white mb-3 text-black rounded" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
