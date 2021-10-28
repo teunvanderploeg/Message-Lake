@@ -19,16 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f8935d1-0cfc-4ccf-912e-50dcafc58ef3" name="Default Changelist" comment="Add tailwind good">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="0f8935d1-0cfc-4ccf-912e-50dcafc58ef3" name="Default Changelist" comment="Remove own login and register pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/overmij.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/overmij.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +168,7 @@
   </component>
   <component name="ProjectId" id="1kml8bBYtN0KZbh4j66elrYnmuZ" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -201,7 +195,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606313488349</updated>
       <workItem from="1606313489428" duration="3556000" />
-      <workItem from="1635442226820" duration="2977000" />
+      <workItem from="1635442226820" duration="9333000" />
     </task>
     <task id="LOCAL-00001" summary="data uit de database opgehaald en op de website kunnen plaatsen op url /posts/1">
       <created>1606316301762</created>
@@ -238,7 +232,98 @@
       <option name="project" value="LOCAL" />
       <updated>1635444201967</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update .gitignore">
+      <created>1635445231179</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1635445231180</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update tailwind">
+      <created>1635445261535</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1635445261535</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update app.css and app.js">
+      <created>1635445365614</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1635445365614</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Make user page">
+      <created>1635445943455</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1635445943455</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix logout">
+      <created>1635446158931</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1635446158931</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Cleaned PostsController">
+      <created>1635446638849</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1635446638849</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Made check if you are an Admin">
+      <created>1635447965114</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1635447965114</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Cleaned login controller">
+      <created>1635447979030</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1635447979030</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Check if is_admin 1 to get admin link">
+      <created>1635448082336</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1635448082336</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Made admin delete route">
+      <created>1635448167642</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1635448167642</updated>
+    </task>
+    <task id="LOCAL-00016" summary="MijnPost model to Post model">
+      <created>1635448770501</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1635448770501</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Move all post functions to post CRUD">
+      <created>1635451063109</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1635451063109</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Remove own login and register pages">
+      <created>1635451278619</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1635451278619</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +349,19 @@
     <MESSAGE value="Cleaned routs" />
     <MESSAGE value="Cleaned Homecontroller" />
     <MESSAGE value="Add tailwind good" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tailwind good" />
+    <MESSAGE value="Update .gitignore" />
+    <MESSAGE value="Update tailwind" />
+    <MESSAGE value="Update app.css and app.js" />
+    <MESSAGE value="Make user page" />
+    <MESSAGE value="Fix logout" />
+    <MESSAGE value="Cleaned PostsController" />
+    <MESSAGE value="Made check if you are an Admin" />
+    <MESSAGE value="Cleaned login controller" />
+    <MESSAGE value="Check if is_admin 1 to get admin link" />
+    <MESSAGE value="Made admin delete route" />
+    <MESSAGE value="MijnPost model to Post model" />
+    <MESSAGE value="Move all post functions to post CRUD" />
+    <MESSAGE value="Remove own login and register pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove own login and register pages" />
   </component>
 </project>
