@@ -19,7 +19,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts.show');
 
     Route::get('/users', [UserController::class, 'users'])->name('user.user');
-    Route::get('/user/{persoon}', [UserController::class, 'overmij'])->name('user.overmij');
+    Route::get('/users/{person}', [UserController::class, 'overmij'])->name('user.overmij');
 
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 

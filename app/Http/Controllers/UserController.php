@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function overmij($persone){
-        return view('overmij', ['name' => $persone]);
-    }
-    public function users(){
-        echo"Lijst met Useres";
+    public function users()
+    {
+        return view('overmij', ['persons' => User::all()]);
+
     }
 
+    public function overmij(User $person){
+        return view('overmij', ['person' => $person]);
+    }
 }

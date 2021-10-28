@@ -1,10 +1,17 @@
 @extends('layouts/main')
 
 @section('page_title')
-    Over Mij
+    Users Page
 @endsection
 
 @section('content')
-    <h2>Dit zijn de posts</h2>
-    <p>{{$name}}</p>
+    @isset($person)
+        <li class="px-y">Name: {{$person->name}}</li>
+    @else
+        <ul>
+            @foreach($persons as $person)
+                <li class="px-y">Name: {{$person->name}}</li>
+            @endforeach
+        </ul>
+    @endisset
 @endsection
