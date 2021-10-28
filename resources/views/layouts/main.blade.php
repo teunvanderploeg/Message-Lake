@@ -44,7 +44,7 @@ _____   ____   ______ ___________     ____   ____   |  | _____  |  | __ ____
                         @csrf
                     </form>
                 </li>
-                @if(Auth::user()->is_admin == "Admin")
+                @if(Auth::user()->is_admin === 1)
                     <li class="md:ml-6 mt-3 md:mt-0">
                         <a href="{{route('admin.admin')}}" class="hover:text-gray-300">Admin</a>
                     </li>
