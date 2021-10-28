@@ -36,7 +36,13 @@
                     <a href="{{route('posts.makepost')}}" class="hover:text-gray-300">Make post</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="{{route('logout')}}" class="hover:text-gray-300">Logout</a>
+                    <a class="hover:text-gray-300" href="{{ route('logout') }}"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
                 @if(Auth::user()->name == "Admin" || Auth::user()->name == "admin")
                 <li class="md:ml-6 mt-3 md:mt-0">

@@ -21,8 +21,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/users', [UserController::class, 'users'])->name('user.user');
     Route::get('/users/{person}', [UserController::class, 'overmij'])->name('user.overmij');
 
-    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-
     Route::get('/admin', [AdminController::class, 'admin'])->name('admin.admin');
     Route::get('/admin/delete/{post}', [AdminController::class, 'deleteAdminn'])->name('admin.delete');
 });
