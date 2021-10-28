@@ -1,35 +1,30 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', 'App\Http\Controllers\HomeController@home')->name('home.home');
+Route::get('/', [HomeController::class, 'home'])->name('home.home');
+Route::get('/home', [HomeController::class, 'home'])->name('home.home');
 
-Route::get('/home', 'App\Http\Controllers\HomeController@home')->name('page.home');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/edit/{post}', [PostsController::class, 'edit'])->name('posts.edit');
+    Route::post('/edit', [PostsController::class, 'editPost'])->name('posts.edit.handler');
+    Route::get('/makepost', [PostsController::class, 'makepost'])->name('posts.makepost');
+    Route::post('/makepost', [PostsController::class, 'handle'])->name('posts.handle');
+    Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts.show');
 
-Route::get('/admin', 'App\Http\Controllers\AdminController@admin')->name('admin.admin');
-Route::get('/admin/delete/{post}', 'App\Http\Controllers\AdminController@deleteAdmin')->name('admin.delete');
+    Route::get('/users', [UserController::class, 'users'])->name('user.user');
+    Route::get('/user/{persoon}', [UserController::class, 'overmij'])->name('user.overmij');
 
-Route::get('/edit/{post}', 'App\Http\Controllers\PostsController@edit')->name('posts.edit');
-Route::post('/edit', 'App\Http\Controllers\PostsController@editPost')->name('posts.edit.handler');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/makepost', 'App\Http\Controllers\PostsController@makepost')->name('posts.makepost');
-Route::post('/makepost', 'App\Http\Controllers\PostsController@handle')->name('posts.handle');
-
-Route::get('/users', 'App\Http\Controllers\UserController@users')->name('user.user');
-
-// Route::get('/login', 'App\Http\Controllers\LoginController@loginpage')->name('login.loginpage');
-// Route::post('/login', 'App\Http\Controllers\LoginController@login')->name('login.login');
-
-Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
-
-// Route::get('/registreren', 'App\Http\Controllers\RegistrerenController@show')->name('registreren.show');
-// Route::post('/registreren', 'App\Http\Controllers\RegistrerenController@registreren')->name('registreren.registreren');
-
-
-
-Route::get('/user/{persoon}', 'App\Http\Controllers\UserController@overmij')->name('user.overmij');
-
-Route::get('/posts/{post}', 'App\Http\Controllers\PostsController@show')->name('posts.show');
+    Route::get('/admin', [AdminController::class, 'admin'])->name('admin.admin');
+    Route::get('/admin/delete/{post}', [AdminController::class, 'deleteAdminn'])->name('admin.delete');
+});
 
 Auth::routes();
