@@ -2,25 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use DB;
 use App\Models\MijnPost;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class PostsController extends Controller
 
 {
-    public function show($postID)
+    public function show(MijnPost $post)
     {
-
-        $post = MijnPost::find($postID);
-        // DB::table('mijn_posts')->where('id', $postID)->first();
-        if (!$post) {
-            abort(404);
-        }
-
         return view('post', array('post' => $post));
     }
+
     public function makepost()
     {
         return view('makepost');
@@ -28,10 +20,6 @@ class PostsController extends Controller
 
     public function handle(Request $request)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $data = $request->validate(
             [
                 'title' => 'required|min:4|max:50',
@@ -40,45 +28,26 @@ class PostsController extends Controller
             ]
         );
 
-        $newFilename = $data['img']->store('upload_img', 'public');
-        $data['img'] = $newFilename;
-        MijnPost::create($data);
-        return view('makepost');
+        $data['img'] = $data['img']->store('upload_img', 'public');
+        return redirect()->route('posts.show', MijnPost::create($data));
     }
 
-    public function edit($postID)
+    public function edit(MijnPost $post)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
-        $post = MijnPost::find($postID);
-        // DB::table('mijn_posts')->where('id', $postID)->first();
-        if (!$post) {
-            abort(404);
-        }
-
         return view('edit', array('post' => $post));
     }
 
     public function editPost(Request $request)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-        // DB::table('mijn_posts')->where('id', $postID)->first();
         $data = $request->validate(
             [
                 'title' => 'required|min:4|max:50',
                 'content' => 'required|min:4|max:500',
-                'id' => 'required',
+                'id' => 'required|integer',
             ]
         );
 
-        $title = $data['title'];
-        $content = $data['content'];
-        $id = $data['id'];
-        MijnPost::where('id', $id)->update(['title' => $title, 'content' => $content]);
+        MijnPost::where('id', $data['id'])->update(['title' => $data['title'], 'content' => $data['content']]);
 
         return redirect('/admin');
     }
