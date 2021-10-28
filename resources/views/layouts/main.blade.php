@@ -19,10 +19,10 @@ _____   ____   ______ ___________     ____   ____   |  | _____  |  | __ ____
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-6">
         <ul class="flex flex-col md:flex-row items-center">
             <li>
-                <a href="{{route('home.home')}}" class="text-xl">Massage<i class="fas fa-water"></i>Lake</a>
+                <a href="{{route('index')}}" class="text-xl">Massage<i class="fas fa-water"></i>Lake</a>
             </li>
             <li class="md:ml-16 mt-3 md:mt-0">
-                <a href="{{route('home.home')}}" class="hover:text-gray-300">Home</a>
+                <a href="{{route('index')}}" class="hover:text-gray-300">Home</a>
             </li>
             @if (!Auth::check())
                 <li class="md:ml-6 mt-3 md:mt-0">
@@ -33,7 +33,7 @@ _____   ____   ______ ___________     ____   ____   |  | _____  |  | __ ____
                 </li>
             @else
                 <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="{{route('posts.makepost')}}" class="hover:text-gray-300">Make post</a>
+                    <a href="{{route('posts.create')}}" class="hover:text-gray-300">Make post</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
                     <a class="hover:text-gray-300" href="{{ route('logout') }}"

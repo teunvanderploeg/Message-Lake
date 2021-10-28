@@ -8,22 +8,16 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [HomeController::class, 'home'])->name('home.home');
-Route::get('/home', [HomeController::class, 'home'])->name('home.home');
+Route::get('/', [PostsController::class, 'index'])->name('index');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/edit/{post}', [PostsController::class, 'edit'])->name('posts.edit');
-    Route::post('/edit', [PostsController::class, 'editPost'])->name('posts.edit.handler');
-    Route::get('/makepost', [PostsController::class, 'makepost'])->name('posts.makepost');
-    Route::post('/makepost', [PostsController::class, 'handle'])->name('posts.handle');
-    Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts.show');
+    Route::resource('posts', PostsController::class)->except('index');
 
     Route::get('/users', [UserController::class, 'users'])->name('user.user');
     Route::get('/users/{person}', [UserController::class, 'overmij'])->name('user.overmij');
 
     Route::group(['middleware' => 'isAdmin'], function () {
         Route::get('/admin', [AdminController::class, 'admin'])->name('admin.admin');
-        Route::get('/admin/delete/{post}', [AdminController::class, 'deleteAdmin'])->name('admin.delete');
     });
 });
 

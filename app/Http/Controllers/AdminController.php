@@ -13,11 +13,4 @@ class AdminController extends Controller
     {
         return view('admin', ['posts' => Post::all()]);
     }
-
-    public function deleteAdmin(Post $post)
-    {
-        $post->delete();
-
-        return redirect('/admin');
-    }
 }

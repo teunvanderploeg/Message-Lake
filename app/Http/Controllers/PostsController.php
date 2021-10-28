@@ -5,20 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class PostsController extends Controller
+class PostsController extends Controller {
 
-{
-    public function show(Post $post)
+    public function __construct()
     {
-        return view('post', array('post' => $post));
+        $this->middleware('isAdmin')->only(['edit', 'update', 'destroy']);
     }
 
-    public function makepost()
+    public function index()
+    {
+        return view('home', ['posts' => Post::paginate(20)]);
+    }
+
+    public function create()
     {
         return view('makepost');
     }
 
-    public function handle(Request $request)
+    public function store(Request $request)
     {
         $data = $request->validate(
             [
@@ -32,23 +36,33 @@ class PostsController extends Controller
         return redirect()->route('posts.show', Post::create($data));
     }
 
+    public function show(Post $post)
+    {
+        return view('post', array('post' => $post));
+    }
+
     public function edit(Post $post)
     {
         return view('edit', array('post' => $post));
     }
 
-    public function editPost(Request $request)
+    public function update(Request $request, Post $post)
     {
         $data = $request->validate(
             [
                 'title' => 'required|min:4|max:50',
                 'content' => 'required|min:4|max:500',
-                'id' => 'required|integer',
             ]
         );
+        $post->update($data);
 
-        Post::where('id', $data['id'])->update(['title' => $data['title'], 'content' => $data['content']]);
+        return redirect(route('index'));
+    }
 
-        return redirect('/admin');
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return redirect(route('admin.admin'));
     }
 }
