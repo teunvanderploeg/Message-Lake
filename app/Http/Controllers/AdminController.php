@@ -11,26 +11,12 @@ class AdminController extends Controller
 {
     public function admin()
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
-        $post = DB::table('mijn_posts')->get();
-        return view('admin', ['posts' => $post]);
+        return view('admin', ['posts' => MijnPost::all()]);
     }
 
-    public function deleteAdmin($postID)
+    public function deleteAdmin(MijnPost $post)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-        $dpost = MijnPost::find($postID);
-        // DB::table('mijn_posts')->where('id', $postID)->first();
-        if (!$dpost) {
-            abort(404);
-        } else {
-            MijnPost::destroy($postID);
-        }
+        $post->delete();
 
         return redirect('/admin');
     }
